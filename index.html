@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Promafa Beta</title>
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 	<script src="dist/js/villa.min.js"></script>
 	<link rel="stylesheet" href="dist/css/villa.min.css"/>
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -60,21 +62,20 @@
 
 	main > .block {
 		display: block;
-		height: 140vh;
-		max-height: 140vh;
+		min-height: 140vh;
 		overflow: hidden;
 		padding: 20vh 0;
 	}
 
 	main > .hero-slides.block {
 		height: 97vh;
-		max-height: 100vh;
+		max-height: 97vh;
+		min-height: 97vh;
 		padding: 0;
 	}
 
 	main > .block .block-inner {
-		height: 100%;
-		max-height: 100%;
+
 		margin: 0 4.5rem;
 		overflow-y: auto;
 		overflow-x: hidden;
