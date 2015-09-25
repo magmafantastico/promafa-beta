@@ -2,9 +2,10 @@
 <html lang="en" class="roboto">
 <head>
 	<meta charset="UTF-8">
-	<title>PagePro</title>
+	<title>Promafa Beta</title>
 	<script src="dist/js/villa.min.js"></script>
 	<link rel="stylesheet" href="dist/css/villa.min.css"/>
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 	<link rel="stylesheet" type="text/css" href="dist/css/villa-cross.css"/>
@@ -15,571 +16,617 @@
 </head>
 <body class="font-grey-900 bg-cover">
 
-<style>
-
-	@keyframes aumentar {
-
-		0% {
-			height: 8rem;
-			width: 8rem;
-		}
-
-		100% {
-			height: 16rem;
-			width: 16rem;
-		}
-
-	}
-
-</style>
-
-<style scoped>
-
-	#splash {
-		display: none;
-		position: absolute;
-		height: 100vh;
-		width: 100vw;
-	}
-
-	.splash-active #splash,
-	.splash-invisible #splash {
-		display: block;
-	}
-
-	.splash-active #splash {
-		opacity: 1;
-		z-index: 10;
-	}
-
-	.splash-invisible #splash {
-		opacity: 0;
-		-webkit-transition: opacity 1s ease;
-		-moz-transition: opacity 1s ease;
-		-ms-transition: opacity 1s ease;
-		-o-transition: opacity 1s ease;
-		transition: opacity 1s ease;
-	}
-
-	#splash .hero {
-		width: 100%;
-		height: 100%;
-	}
-
-	.logo {
-		border-radius: 50%;
-		height: 8rem;
-		width: 8rem;
-	}
-
-	.splash-active .logo {
-		animation: aumentar .7s linear 0s 1;
-		height: 16rem;
-		width: 16rem;
-	}
-
-</style>
-
-<div id="splash" class="blue">
-
-	<div class="hero flex justify-center align-center grey">
-
-		<div class="logo red-700"></div>
-
-	</div>
-
-</div>
-
-<script>
-
-	var body = document.body;
-	var splash = document.getElementById('splash');
-
-
-	var killSplash = function() {
-
-		window.setTimeout(function() {
-			body.classList.remove('splash-active');
-			body.classList.add('splash-invisible');
-
-			window.setTimeout(function() {
-				body.classList.remove('splash-invisible');
-			}, 1000);
-
-		}, 2000);
-
-	};
-
-//	killSplash();
-
-</script>
-
 <style scoped>
 
 	body {
-		background-image: url("img/sky03.jpg");
-		overflow: hidden;
+		/*overflow: hidden;*/
 	}
 
-	main,
-	main .row {
-		height: auto;
-		overflow: hidden;
-		z-index: 1;
-		width: 100%;
-	}
-
-	main .row {
+	#main-header {
+		position: fixed;
+		width: 30%;
 		height: 100vh;
 	}
 
-	main.swip {
-		-webkit-transition-property: transform, width;
-		-moz-transition-property: transform, width;
-		-ms-transition-property: transform, width;
-		-o-transition-property: transform, width;
-		transition-property: transform, width;
-		-webkit-transition-timing-function: ease;
-		-moz-transition-timing-function: ease;
-		-ms-transition-timing-function: ease;
-		-o-transition-timing-function: ease;
-		transition-timing-function: ease;
-		-webkit-transition-duration: .7s;
-		-moz-transition-duration: .7s;
-		-ms-transition-duration: .7s;
-		-o-transition-duration: .7s;
-		transition-duration: .7s;
+	#main-header header,
+	#main-header footer {
+		padding: 2.25rem;
 	}
 
-	.pane {
-		height: 100%;
-		padding: 1rem;
+	#main-header img {
+		display: block;
 	}
 
-	.pane.half {
-		width: 50%;
+	#main {
+		position: absolute;
+		left: 30%;
+		width: 70%;
+		z-index: 0;
 	}
 
-	main.swip .pane {
-		-webkit-transition: width .7s ease;
-		-moz-transition: width .7s ease;
-		-ms-transition: width .7s ease;
-		-o-transition: width .7s ease;
-		transition: width .7s ease;
-	}
-
-	.pane .pane-wrapper {
-		height: 100%;
-		padding: .5rem;
-		width: 100%;
-	}
-
-	.pane .pane-wrapper.border {
-		border-style: solid;
-		border-width: 1px;
-	}
-
-	.pane .pane-inner {
-		height: 100%;
-		width: 100%;
-		overflow: auto;
-	}
-
-	.pane .pane-inner-copy {
-		padding: 1rem;
-	}
-
-	.pane .pane-inner-copy h1 {
+	h1 {
+		font-size: 8em;
 		font-weight: 100;
-		margin-bottom: .5em;
 	}
 
-	.pane .pane-inner-copy p {
-		font-weight: 300;
+	p {
 		font-size: 1.125em;
-		margin-bottom: 1em;
+		margin: 0 0 1em 3em;
+		text-align: justify;
+		max-width: 40em;
+	}
+
+	main > .block {
+		display: block;
+		height: 140vh;
+		max-height: 140vh;
+		overflow: hidden;
+		padding: 20vh 0;
+	}
+
+
+	main > .hero-slides.block {
+		height: 100vh;
+		max-height: 100vh;
+		padding: 0;
+	}
+
+	main > .block .block-inner {
+		height: 100%;
+		max-height: 100%;
+		margin: 0 4.5rem;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	.hero-slides {
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.hero-slides .gallery-content {
+		background-position: left center;
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		-webkit-transition: all .7s ease-out;
+		-moz-transition: all .7s ease-out;
+		-ms-transition: all .7s ease-out;
+		-o-transition: all .7s ease-out;
+		transition: all .7s ease-out;
+	}
+
+	.hero-slides .gallery-content {
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		width: 100%;
+	}
+
+	.hero-slides .gallery-content .hero-content,
+	.hero-slides .gallery-content .hero-content a {
+		display: block;
+		width: 100%;
+		height: 100%;
 	}
 
 </style>
 
+<header id="main-header" class="flex flex-column justify-between grey-100">
+
+	<header class="flex justify-end">
+
+		<a href="#"><img src="dist/img/logotipo.png" alt=""/></a>
+		
+	</header>
+
+	<nav id="main-nav" class="nav">
+
+		<style scoped>
+
+			ul li a {
+				font-weight: 600;
+				text-align: right;
+				padding: .875em 2.25rem;
+				text-transform: uppercase;
+				width: 100%;
+				letter-spacing: 1px;
+			}
+
+		</style>
+
+		<ul class="flex flex-column child-flex">
+			<li><a href="#about" class="hfont-red-400 ">Institucional</a></li>
+			<li><a href="#products" class="hfont-brown-200 ">Produtos</a></li>
+			<li><a href="#recipes" class="hfont-green-300 ">Receitas</a></li>
+			<li><a href="#local" class="hfont-yellow-700 ">Localização</a></li>
+			<li><a href="#reps" class="hfont-deep-purple-300 ">Representes</a></li>
+			<li><a href="#contact" class="hfont-brown-400 ">Contato</a></li>
+		</ul>
+
+	</nav>
+
+	<ul class="flex flex-row justify-end">
+
+		<style scoped>
+
+			ul {
+				padding: 0 2.25rem;
+			}
+
+			li {
+				margin: .375em;
+			}
+
+			img {
+				height: 32px;
+				width: 32px;
+			}
+
+		</style>
+
+		<li><a href="http://facebook.com"><img src="dist/img/facebook.png" alt=""/></a></li>
+		<li><a href="http://facebook.com"><img src="dist/img/instagram.png" alt=""/></a></li>
+		<li><a href="http://facebook.com"><img src="dist/img/blogger.png" alt=""/></a></li>
+
+	</ul>
+
+	<footer class="flex flex-column align-end justify-end">
+
+		<style scoped>
+
+			img {
+				margin-bottom: .5em;
+			}
+
+			p {
+				max-width: 14em;
+				text-align: right;
+				font-size: .875em;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+
+		</style>
+
+		<img src="dist/img/sgs_iso_9001_tpl.png" width="100" alt=""/>
+
+		<p>Empresa certificada
+			<br/>iso 9001:2008</p>
+		<p>Copyright © 2015 PROMAFA.</p>
+
+	</footer>
+
+</header>
+
 <main id="main" class="flex flex-column">
 
-	<div class="row flex current">
+	<article id="hero-gallery" class="hero-slides block">
 
-		<div id="home" class="pane white">
+		<section class="gallery-content current" style="background-image: url('dist/img/fdo_type-1.png')">
 
-			<div class="pane-wrapper">
+			<div class="hero-content">
 
-				<div class="pane-inner flex flex-column child-grow-1">
-
-					<header class="flex justify-center align-center width-100">
-
-						<style>
-
-							@keyframes start {
-
-								0% {
-									height: 8rem;
-									width: 8rem;
-								}
-
-								50% {
-									height: 4rem;
-									width: 4rem;
-								}
-
-								100% {
-									height: 8rem;
-									width: 8rem;
-								}
-
-							}
-
-						</style>
-
-						<style scoped>
-
-							.logo-wrapper {
-								height: 16rem;
-								width: 16rem;
-								-webkit-transition: height .3s ease;
-								-moz-transition: height .3s ease;
-								-ms-transition: height .3s ease;
-								-o-transition: height .3s ease;
-								transition: height .3s ease;
-							}
-
-							.logo {
-								border-radius: 50%;
-								height: 8rem;
-								width: 8rem;
-								-webkit-transition: all .3s ease;
-								-moz-transition: all .3s ease;
-								-ms-transition: all .3s ease;
-								-o-transition: all .3s ease;
-								transition: all .3s ease;
-							}
-
-							.logo:hover {
-								height: 10rem;
-								width: 10rem;
-							}
-
-							:not(.half) .logo {
-								/*-webkit-animation: start 1s ease infinite;*/
-								/*-o-animation: start 1s ease infinite;*/
-								/*animation: start 1s ease infinite;*/
-							}
-
-						</style>
-
-
-						<div class="logo-wrapper flex justify-center align-center">
-							<div class="logo red-700"></div>
-						</div>
-
-					</header>
-
-					<nav class="main-nav flex flex-column align-center justify-start">
-
-						<style scoped>
-
-							.main-nav ul {
-								width: 10rem;
-								border-top: solid 2px #000000;
-								border-bottom: solid 2px #000000;
-								padding: 24px 0;
-							}
-
-							.main-nav li,
-							.main-nav li a {
-								width: 100%;
-							}
-
-							.main-nav li a {
-								text-align: center;
-								padding: 8px 0;
-							}
-
-							.main-nav li a .name {
-								color: #212121;
-								font-size: 1.25em;
-								text-transform: uppercase;
-								font-weight: 600;
-							}
-
-							.main-nav li a .name:hover {
-								color: #616161;
-							}
-
-						</style>
-
-						<ul class="child-flex">
-
-							<li><a href="#"><span class="name">Sobre</span></a></li>
-							<li><a href="#"><span class="name">Produtos</span></a></li>
-							<li><a href="#"><span class="name">Receitas</span></a></li>
-							<li><a href="#"><span id="localize" class="name">Localização</span></a></li>
-
-						</ul>
-
-					</nav>
-
-				</div>
+				<a href="#" class="link-area"></a>
 
 			</div>
 
-		</div>
+		</section>
 
-		<div class="pane two-third red">
+		<section class="gallery-content" style="background-image: url('dist/img/fdo_type-2.png')">
 
-			<div class="pane-wrapper">
+			<div class="hero-content">
 
-				<div class="pane-inner">
-
-					<div class="pane-inner-copy font-white">
-
-						<h1>Sobre</h1>
-
-						<p>A empresa foi fundada em 13 de março de 1.969, um dos fundadores foi o atual proprietário Antonio Fadel, que com irmãos e primos vieram de Conchal, cidadezinha próxima a Mogi Mirim, para investir em Palmital, cidade que tinha muitas previsões de crescimento devido à terra produtiva.</p>
-
-						<p>No ano de 1.988 a sociedade foi dissolvida e Antonio começa uma nova sociedade com seus filhos. Nesta época o principal produto era farinha de raspa de mandioca, esta farinha era utilizada na mistura com farinha de trigo, devido à escassez do trigo nacional nesta época.</p>
-
-						<p>Atualmente a empresa produz derivados de mandioca como: fécula, farinha de raspa, polvilho doce, polvilho azedo e tapioca hidratada. A Promafa cresceu de forma consistente e seu crescimento foi baseado sempre na qualidade de seu produto e no atendimento primordial ao cliente.</p>
-
-						<p>Para atender esta Política, a nossa empresa reconhece que o fator humano é peça fundamental para a obtenção da qualidade total do seu sistema, e que a ele deve ser dado todo o apoio necessário para o perfeito entendimento deste compromisso.</p>
-
-						<p>Buscar a qualidade em todos os processos existentes é uma missão infindável, objetivando sempre a melhoria contínua em quaisquer tarefas que agreguem valor ao produto ou serviço, dando ênfase constante à participação de cada funcionário e ao trabalho de equipe.</p>
-
-						<p>Trabalhos que preservem a segurança e saúde dos seus funcionários e a preservação do meio ambiente serão considerados prioritários e terão o respaldo da diretoria.</p>
-
-						<p>A preservação do meio ambiente será ponto estratégico do nosso negócio, na busca constante do melhoramento contínuo dos processos.</p>
-
-						<p>Para atender a esta política, delega a cada funcionário individualmente, o comprometimento pessoal, encorajando e facilitando a autoconfiança, simplicidade e agilidade em cada tarefa executada.</p>
-
-						<p>Esta política, juntamente com os procedimentos e rotinas internas, embasa o Sistema da Qualidade aplicado em nossa empresa.</p>
-
-					</div>
-
-				</div>
+				<a href="#" class="link-area"></a>
 
 			</div>
 
-		</div>
+		</section>
 
+		<section class="gallery-content" style="background-image: url('dist/img/fdo_type-3.png')">
 
-		<div class="pane sixth white">
+			<div class="hero-content">
 
-			<div class="pane-wrapper">
-
-				<div class="pane-inner flex flex-column justify-center">
-
-					<style scoped>
-
-						.button {
-							border-style: solid;
-							border-radius: 3px;
-							border-width: 2px;
-							height: 3.5rem;
-							padding: 0 2.25rem;
-							font-size: 1.125em;
-						}
-
-					</style>
-
-					<a href="#" id="goReceita" class="button flex justify-center align-center border-red font-red h-red hfont-white">
-						Receitas
-					</a>
-
-				</div>
+				<a href="#" class="link-area"></a>
 
 			</div>
 
+		</section>
+
+		<section class="gallery-content" style="background-image: url('dist/img/fdo_type-4.png')">
+
+			<div class="hero-content">
+
+				<a href="#" class="link-area"></a>
+
+			</div>
+
+		</section>
+
+		<section class="gallery-content" style="background-image: url('dist/img/fdo_type-5.png')">
+
+			<div class="hero-content">
+
+				<a href="#" class="link-area"></a>
+
+			</div>
+
+		</section>
+
+
+	</article>
+
+	<article id="about" class="block red-900 font-white">
+
+		<div class="block-inner">
+
+			<h1>Institucional</h1>
+
+			<p>A empresa foi fundada em 13 de março de 1.969, um dos fundadores foi o atual proprietário Antonio Fadel, que com irmãos e primos vieram de Conchal, cidadezinha próxima a Mogi Mirim, para investir em Palmital, cidade que tinha muitas previsões de crescimento devido à terra produtiva.</p>
+
+			<p>No ano de 1.988 a sociedade foi dissolvida e Antonio começa uma nova sociedade com seus filhos. Nesta época o principal produto era farinha de raspa de mandioca, esta farinha era utilizada na mistura com farinha de trigo, devido à escassez do trigo nacional nesta época.</p>
+
+			<p>Atualmente a empresa produz derivados de mandioca como: fécula, farinha de raspa, polvilho doce, polvilho azedo e tapioca hidratada. A Promafa cresceu de forma consistente e seu crescimento foi baseado sempre na qualidade de seu produto e no atendimento primordial ao cliente.</p>
+
+			<p>Trabalhos que preservem a segurança e saúde dos seus funcionários e a preservação do meio ambiente serão considerados prioritários e terão o respaldo da diretoria.</p>
+
+			<p>A preservação do meio ambiente será ponto estratégico do nosso negócio, na busca constante do melhoramento contínuo dos processos.</p>
+
+			<p>Para atender a esta política, delega a cada funcionário individualmente, o comprometimento pessoal, encorajando e facilitando a autoconfiança, simplicidade e agilidade em cada tarefa executada.</p>
+
 		</div>
 
-		<div class="pane three-quarter red bg-cover">
+	</article>
+
+	<article id="products" class="block brown-200 font-white">
+
+		<div class="block-inner">
+
+			<h1>Produtos</h1>
+
+			<p>A PROMAFA produz derivados de mandioca como: fécula, farinha de raspa, polvilho doce, polvilho azedo e tapioca hidratada.</p>
+
+			<p>Todos os produtos atendem as exigências de qualidade do mercado.</p>
 
 			<style scoped>
 
-				.pane {
-					background-image: url("img/people02.jpeg");
+				ul {
+					margin-top: 6rem;
+				}
+
+				li a {
+					display: flex;
+					align-items: center;
+					height: 24rem;
+					padding: 0 3rem;
+					border-radius: 50%;
+				}
+
+				li a img {
+					width: 18rem;
+					display: block;
 				}
 
 			</style>
 
-			<div class="pane-wrapper">
+			<ul class="flex flex-wrap flex-row child-flex justify-around child-justify-center child-align-center">
 
-				<div class="pane-inner flex flex-column justify-center">
+				<li>
 
-				</div>
+					<a href="#" class="white"><img src="dist/img/fadel_marca.png" alt=""/></a>
 
-			</div>
+				</li>
 
-		</div>
+				<li>
 
-	</div>
+					<a href="#" class="white"><img src="dist/img/raiz_do_brasil_marca.png" alt=""/></a>
 
-	<div class="row flex">
+				</li>
 
-		<div class="pane full-width red bg-cover">
-
-			<div class="pane-wrapper">
-
-				<div class="pane-inner">
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium commodi consequatur ducimus eum excepturi exercitationem hic id illo in, magnam, nisi obcaecati quod repellat repellendus tempora temporibus ullam vero voluptatem!</p>
-
-				</div>
-
-			</div>
+			</ul>
 
 		</div>
 
-	</div>
+	</article>
+
+	<article id="recipes" class="block green-300 font-white">
+
+		<div class="block-inner">
+
+			<h1>Receitas</h1>
+
+			<p>Aqui você encontra as mais deliciosas receitas com nossos produtos. Prove estas delícias!</p>
+
+			<style scoped>
+
+				ul {
+					margin-top: 4.5rem;
+				}
+
+				li a {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					margin: 0 2.25rem 1.5rem;
+				}
+
+				li a img {
+					border-radius: 50%;
+					width: 14rem;
+					height: 14rem;
+					display: block;
+				}
+
+				li a h2 {
+					font-size: 1.5em;
+					font-weight: 300;
+				}
+
+			</style>
+
+			<ul class="flex flex-wrap flex-row child-flex justify-around child-justify-center child-align-center">
+
+				<li>
+
+					<a href="#" class="">
+						<img src="dist/img/tapioca_01.png" alt=""/>
+						<h2>Lorem ipsum</h2>
+					</a>
+
+				</li>
+
+				<li>
+
+					<a href="#" class="">
+						<img src="dist/img/tapioca_02.png" alt=""/>
+						<h2>Lorem ipsum</h2>
+					</a>
+
+				</li>
+
+				<li>
+
+					<a href="#" class="">
+						<img src="dist/img/tapioca_03.png" alt=""/>
+						<h2>Lorem ipsum</h2>
+					</a>
+
+				</li>
+
+				<li>
+
+					<a href="#" class="">
+						<img src="dist/img/tapioca_04.png" alt=""/>
+						<h2>Lorem ipsum</h2>
+					</a>
+
+				</li>
+
+				<li>
+
+					<a href="#" class="">
+						<img src="dist/img/tapioca_05.png" alt=""/>
+						<h2>Lorem ipsum</h2>
+					</a>
+
+				</li>
+
+				<li>
+
+					<a href="#" class="">
+						<img src="dist/img/tapioca_06.png" alt=""/>
+						<h2>Lorem ipsum</h2>
+					</a>
+
+				</li>
+
+			</ul>
+
+		</div>
+
+	</article>
+
+	<article id="local" class="block yellow-700 font-white">
+
+		<div class="block-inner">
+
+			<h1>Localização</h1>
+
+			<p>PROMAFA - Produtos de Mandioca Fadel
+				<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
+				<br/>Fax: (18) 3351 5576
+				<br/>Rua São Paulo, 43
+				<br/>Cep.: 19.970-000 • Palmital/SP</p>
+
+			<style scoped>
+
+				#local-map {
+					margin-top: 2.25rem;
+					height: 30em;
+					width: 100%;
+				}
+
+			</style>
+
+			<div id="local-map"></div>
+
+		</div>
+
+	</article>
+
+	<article id="reps" class="block deep-purple-300 font-white">
+
+		<div class="block-inner">
+
+			<h1>Representantes</h1>
+
+			<style scoped>
+
+				#reps-map {
+					margin: 2.25rem 0;
+					height: 30em;
+					width: 100%;
+				}
+
+			</style>
+
+			<div id="reps-map"></div>
+
+			<p>PROMAFA - Produtos de Mandioca Fadel
+				<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
+				<br/>Fax: (18) 3351 5576
+				<br/>Rua São Paulo, 43
+				<br/>Cep.: 19.970-000 • Palmital/SP</p>
+
+		</div>
+
+	</article>
+
+	<article id="contact" class="block brown-400 font-white">
+
+		<div class="block-inner">
+
+			<h1>Contato</h1>
+
+		</div>
+
+	</article>
 
 </main>
 
 <script>
 
-	var cl, e, h, i, m, mh, mw, p, r, rc, s, t, v, w;
+	var main = document.getElementById('main');
 
-	m = document.getElementById('main');
+	var hero = document.getElementById('hero-gallery');
+	var heroSlides = document.querySelectorAll('.gallery-content');
 
-	r = m.getElementsByClassName('row');
+	var resizeMain = function() {
+		var windowHeigth = window.innerHeight;
+		var windowWidth = window.innerWidth;
 
-	/* Pane Functions */
+		var mainWidth, navWidth;
 
-	w = window.innerWidth;
-	mw = m.offsetWidth;
+		var ratio;
 
-	v = false;
+		if (windowWidth < windowHeigth * 1.5 + 360) {
 
-	h = document.getElementById('home');
+			// 4 x 3 = 1,333
+			mainWidth = ( windowHeigth / 3 ) * 4;
+			navWidth = windowWidth - mainWidth;
+			ratio = '<1.333';
 
-	function getPageTopLeft(el) {
-		var rect = el.getBoundingClientRect();
-		var docEl = document.documentElement;
-		return {
-			left: rect.left + (window.pageXOffset || docEl.scrollLeft || 0),
-			top: rect.top + (window.pageYOffset || docEl.scrollTop || 0)
+			if (windowWidth < windowHeigth * 1.333 + 240) {
+				// 6 x 5 = 1.2
+				mainWidth = windowHeigth * 1.2;
+				navWidth = windowWidth - mainWidth;
+				ratio = '<1.2';
+			}
+
+		} else {
+			// 2 x 1 = 1,5
+			mainWidth = windowHeigth * 1.5;
+			navWidth = windowWidth - mainWidth;
+			ratio = '>1.5';
+		}
+
+		console.log(ratio);
+
+		nav.style.width = navWidth + 'px';
+		main.style.width = mainWidth + 'px';
+		main.style.left = navWidth + 'px';
+	};
+
+//	resizeMain();
+//	window.addEventListener('resize', resizeMain);
+
+	var changeSlide = function() {
+
+		var width = main.offsetWidth;
+		var last = heroSlides.length - 1;
+		var zero = false;
+
+		if (heroSlides[last].classList.contains('current')) {
+			heroSlides[last].classList.remove('current');
+			heroSlides[last - 1].classList.add('current');
+		} else {
+			heroSlides[last - 1].classList.remove('current');
+			heroSlides[last].classList.add('current');
+			zero = true;
+		}
+
+		for (var i = heroSlides.length; i--; )
+			heroSlides[i].style.transform = '';
+
+		if (zero)
+			heroSlides[last].style.transform = 'translateX(-' + width + 'px)';
+
+	};
+
+	main.addEventListener('click', changeSlide);
+
+//AIzaSyAk-UYOSdeb5RSXqx_gwSnTSW0rRFqXT5Q
+
+	var localMap = document.getElementById('local-map');
+	var repsMap = document.getElementById('reps-map');
+
+	function initLocalMap(canvas) {
+
+		var myLatLng = {lat: -22.7753073, lng: -50.2077834};
+
+		var styleArray = [
+			{
+				featureType: "all",
+				stylers: [
+					{ saturation: -80 }
+				]
+			},{
+				featureType: "road.arterial",
+				elementType: "geometry",
+				stylers: [
+					{ hue: "#00ffee" },
+					{ saturation: 50 }
+				]
+			},{
+				featureType: "poi",
+				stylers: [
+					{ visibility: "on" }
+				]
+			}
+		];
+
+		var mapOptions = {
+			scrollwheel: false,
+			center: myLatLng,
+			zoom: 17,
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			styles: styleArray
 		};
+
+		var map = new google.maps.Map(canvas, mapOptions);
+
+		var marker = new google.maps.Marker({
+			map: map,
+			position: myLatLng,
+			title: 'Hello World!'
+		});
+
+
 	}
 
-	var mainResizePanes = function() {
-		w = window.innerWidth;
-		mw = 0;
-		mh = 0;
+	function initMaps() {
+		setTimeout(function() {
+			initLocalMap(localMap);
+			setTimeout(function() {
+				initLocalMap(repsMap);
+			}, 800);
+		}, 800);
+	}
 
-		for (i = 0; i < r.length; i++ )
-			if (r[i].classList.contains('current')) break; else mh += r[i].offsetHeight;
-
-		for (i = p.length; i--; ) {
-			e = p[i];
-			s = w;
-			cl = e.classList;
-
-			if (cl.contains('full-width')) s = w;
-			else if (cl.contains('half')) s = s / 2;
-			else if (cl.contains('third')) s = s / 3;
-			else if (cl.contains('two-third')) s = 2 * (s / 3);
-			else if (cl.contains('quarter')) s = s / 4;
-			else if (cl.contains('three-quarter')) s = 3 * (s / 4);
-			else if (cl.contains('fifth')) s = s / 5;
-			else if (cl.contains('sixth')) s = s / 6;
-			else if (cl.contains('eighth')) s = s / 8;
-
-			e.style.width = s + 'px';
-			mw += s;
-		}
-
-		m.style.width = mw + 'px';
-
-		if (v) {
-			t = 0;
-			for (i = v - 1; i--; ) t += p[i].offsetWidth;
-			m.style.transform = 'translate(-' + t + 'px,' + mh + 'px)';
-		} else {
-			t = 'none';
-			m.style.transform = t;
-		}
-
-	};
-
-	var setCurrentPanes = function() {
-		rc = m.querySelector('.row.current');
-		p = rc.getElementsByClassName('pane');
-	};
-
-	/**
-	 * Função para redimensionar da página
-	 *
-	 * @param c class
-	 */
-	var mainResize = function(c) {
-		var d;
-
-		if (d = typeof c == 'string') m.classList.add(c);
-
-		setCurrentPanes();
-		mainResizePanes();
-
-		if (d)
-			window.setTimeout(function() {
-				m.classList.remove(c);
-			}, 700);
-	};
-
-	/**
-	 * Adiciona a classe 'half' ao elemento
-	 *
-	 * @param el
-	 */
-	var addHalfClass = function(el) {
-		el.classList.add('sixth');
-		mainResize('swip');
-	};
-
-	document.getElementById('goReceita').addEventListener('click', function () {
-		v = !v ? 3 : false;
-		mainResize('swip');
-	});
-
-	window.addEventListener('resize', mainResize);
-
-	mainResize();
-
-	window.addEventListener('load', function() {
-		window.setTimeout(function() {
-			addHalfClass(h);
-		}, 1000);
-	});
-
-	/* Row Functions */
-
-	document.getElementById('localize').addEventListener('click', function() {
-
-		var mh = 0;
-
-		for (i = 0; i < r.length; i++) {
-			mh += r[i].offsetHeight;
-			if (r[i].classList.contains('current')) {
-				r[i].classList.remove('current');
-				r[i + 1].classList.add('current');
-				break;
-			}
-		}
-
-		m.classList.add('swip');
-
-		mainResize();
-
-		m.style.transform = 'translate(' + 0 + 'px,-'+ mh + 'px)';
-
-		window.setTimeout(function() {
-			m.classList.remove('swip');
-		}, 700);
-
-	});
+	setTimeout(initMaps, 3000);
 
 </script>
 

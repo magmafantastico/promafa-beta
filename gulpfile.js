@@ -3,12 +3,12 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	minifycss = require('gulp-minify-css'),
 	rename = require('gulp-rename'),
-	uglify = require('gulp-uglify');
+	uglify = require('gulp-uglify'),
+	tinypng = require('gulp-tinypng');
 
-var core = 'css/_.css',
-	cssFiles = 'css/*.css',
-	cssCross = 'css/cross/*.css',
-	jsFiles = 'js/villa.js';
+var cssFiles = 'css/*.css',
+	jsFiles = 'js/*.js',
+	imgfiles = 'img/*';
 
 gulp.task('css', function() {
 	gulp.src(cssFiles)
@@ -40,6 +40,12 @@ gulp.task('js', function() {
 			extname: '.min.js'
 		}))
 		.pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('tinypng', function () {
+	gulp.src(imgfiles)
+		.pipe(tinypng('8eNoFlUv4wHzam_8GleKHdhH2YFk9xAd'))
+		.pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('default', function() {
