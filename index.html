@@ -130,7 +130,7 @@
 		<style scoped>
 
 			ul li a {
-				font-weight: 600;
+				font-weight: 900;
 				text-align: right;
 				padding: .875em 2.25rem;
 				text-transform: uppercase;
@@ -499,12 +499,10 @@
 
 </main>
 
+<script src="js/gallery.js"></script>
 <script>
 
-	var main = document.getElementById('main');
 
-	var hero = document.getElementById('hero-gallery');
-	var heroSlides = document.querySelectorAll('.gallery-content');
 
 	var resizeMain = function() {
 		var windowHeigth = window.innerHeight;
@@ -545,30 +543,7 @@
 //	resizeMain();
 //	window.addEventListener('resize', resizeMain);
 
-	var changeSlide = function() {
 
-		var width = main.offsetWidth;
-		var last = heroSlides.length - 1;
-		var zero = false;
-
-		if (heroSlides[last].classList.contains('current')) {
-			heroSlides[last].classList.remove('current');
-			heroSlides[last - 1].classList.add('current');
-		} else {
-			heroSlides[last - 1].classList.remove('current');
-			heroSlides[last].classList.add('current');
-			zero = true;
-		}
-
-		for (var i = heroSlides.length; i--; )
-			heroSlides[i].style.transform = '';
-
-		if (zero)
-			heroSlides[last].style.transform = 'translateX(-' + width + 'px)';
-
-	};
-
-	main.addEventListener('click', changeSlide);
 
 //AIzaSyAk-UYOSdeb5RSXqx_gwSnTSW0rRFqXT5Q
 
@@ -628,7 +603,7 @@
 		}, 800);
 	}
 
-//	setTimeout(initMaps, 15000);
+	setTimeout(initMaps, 1000);
 
 </script>
 
