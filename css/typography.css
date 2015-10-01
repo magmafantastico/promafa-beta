@@ -1,0 +1,12 @@
+
+h1 {
+	font-size: 8em;
+	font-weight: 100;
+}
+
+p {
+	font-size: 1.125em;
+	margin: 0 0 1em 3em;
+	text-align: justify;
+	max-width: 40em;
+}

@@ -1,0 +1,36 @@
+#main-header {
+	position: fixed;
+	width: 30%;
+	height: 100vh;
+	padding: 1.5% 0;
+}
+
+#main-header header,
+#main-header footer {
+	padding: 2.25rem;
+}
+
+#main-header img {
+	display: block;
+}
+
+main {
+	position: absolute;
+	left: 30%;
+	width: 70%;
+	padding: 1.5% 1.5%;
+	z-index: 0;
+}
+
+main > .block {
+	display: block;
+	min-height: 140vh;
+	overflow: hidden;
+	padding: 20vh 0;
+}
+
+main > .block .block-inner {
+	margin: 0 4.5rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+}

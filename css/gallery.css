@@ -1,0 +1,53 @@
+main > #hero-gallery.block {
+	height: 97vh;
+	max-height: 97vh;
+	min-height: 97vh;
+	padding: 0;
+}
+
+.hero-slides {
+	height: 100%;
+	width: 500%;
+	overflow: hidden;
+	position: relative;
+}
+
+.hero-slides .gallery-content {
+	-webkit-transition: all .7s ease-in-out;
+	-moz-transition: all .7s ease-in-out;
+	-ms-transition: all .7s ease-in-out;
+	-o-transition: all .7s ease-in-out;
+	transition: all .7s ease-in-out;
+}
+
+.hero-slides .gallery-content {
+	display: inline-block;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+
+.hero-slides .gallery-content .hero-content {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.hero-slides .gallery-content .hero-image {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+
+.hero-slides .gallery-content .hero-image .hero-image-inner {
+	background-position: left center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}

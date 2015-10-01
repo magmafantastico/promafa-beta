@@ -1,0 +1,25 @@
+/* main */
+
+#main-header {
+	height: 600px;
+}
+
+#main-header header,
+#main-header footer {
+	padding: 2.25em;
+}
+
+main > .block {
+	min-height: 1000px;
+	padding: 200px 0;
+}
+
+main > .block .block-inner {
+	margin: 0 4.5em;
+}
+
+/* gallery */
+
+main > #hero-gallery.block {
+	height: 600px;
+}

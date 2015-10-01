@@ -7,115 +7,20 @@
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 	<script src="dist/js/villa.min.js"></script>
 	<link rel="stylesheet" href="dist/css/villa.min.css"/>
+	<link rel="stylesheet" href="css/typography.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="css/gallery.css"/>
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 	<link rel="stylesheet" type="text/css" href="dist/css/villa-cross.css"/>
+	<link rel="stylesheet" type="text/css" href="css/cross.css"/>
 	<script src="dist/js/html5shiv.js"></script>
 	<script src="dist/js/html5shiv-printshiv.js"></script>
 	<script src="dist/js/classList.min.js"></script>
 	<![endif]-->
 </head>
 <body class="font-grey-900 bg-cover grey-100">
-
-<style scoped>
-
-	body {
-		/*overflow: hidden;*/
-	}
-
-	#main-header {
-		position: fixed;
-		width: 30%;
-		height: 100vh;
-		padding: 1.5% 0;
-	}
-
-	#main-header header,
-	#main-header footer {
-		padding: 2.25rem;
-	}
-
-	#main-header img {
-		display: block;
-	}
-
-	h1 {
-		font-size: 8em;
-		font-weight: 100;
-	}
-
-	p {
-		font-size: 1.125em;
-		margin: 0 0 1em 3em;
-		text-align: justify;
-		max-width: 40em;
-	}
-
-	main {
-		position: absolute;
-		left: 30%;
-		width: 70%;
-		padding: 1.5% 1.5%;
-		z-index: 0;
-	}
-
-	main > .block {
-		display: block;
-		min-height: 140vh;
-		overflow: hidden;
-		padding: 20vh 0;
-	}
-
-	main > .hero-slides.block {
-		height: 97vh;
-		max-height: 97vh;
-		min-height: 97vh;
-		padding: 0;
-	}
-
-	main > .block .block-inner {
-
-		margin: 0 4.5rem;
-		overflow-y: auto;
-		overflow-x: hidden;
-	}
-
-	.hero-slides {
-		width: 100%;
-		overflow: hidden;
-		position: relative;
-	}
-
-	.hero-slides .gallery-content {
-		background-position: left center;
-		background-repeat: no-repeat;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		-webkit-transition: all .7s ease-out;
-		-moz-transition: all .7s ease-out;
-		-ms-transition: all .7s ease-out;
-		-o-transition: all .7s ease-out;
-		transition: all .7s ease-out;
-	}
-
-	.hero-slides .gallery-content {
-		height: 100%;
-		overflow: hidden;
-		position: absolute;
-		width: 100%;
-	}
-
-	.hero-slides .gallery-content .hero-content,
-	.hero-slides .gallery-content .hero-content a {
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-</style>
 
 <header id="main-header" class="flex flex-column justify-between grey-100">
 
@@ -206,58 +111,81 @@
 
 <main id="main" class="flex flex-column">
 
-	<article id="hero-gallery" class="hero-slides block">
+	<article id="hero-gallery" class="block">
 
-		<section class="gallery-content current" style="background-image: url('dist/img/fdo_type-1.png')">
+		<section id="hero-gallery-slides" class="hero-slides">
 
-			<div class="hero-content">
+			<section class="gallery-content">
 
-				<a href="#" class="link-area"></a>
+				<div class="hero-content">
 
-			</div>
+					<figure class="hero-image">
+
+						<div class="hero-image-inner" style="background-image: url('dist/img/fdo_type-1.png')"></div>
+
+					</figure>
+
+				</div>
+
+			</section>
+
+			<section class="gallery-content">
+
+				<div class="hero-content">
+
+					<figure class="hero-image">
+
+						<div class="hero-image-inner" style="background-image: url('dist/img/fdo_type-2.png')"></div>
+
+					</figure>
+
+				</div>
+
+			</section>
+
+			<section class="gallery-content">
+
+				<div class="hero-content">
+
+					<figure class="hero-image">
+
+						<div class="hero-image-inner" style="background-image: url('dist/img/fdo_type-3.png')"></div>
+
+					</figure>
+
+				</div>
+
+			</section>
+
+			<section class="gallery-content current">
+
+				<div class="hero-content">
+
+					<figure class="hero-image">
+
+						<div class="hero-image-inner" style="background-image: url('dist/img/fdo_type-4.png')"></div>
+
+					</figure>
+
+				</div>
+
+			</section>
+
+			<section class="gallery-content">
+
+				<div class="hero-content">
+
+					<figure class="hero-image">
+
+						<div class="hero-image-inner" style="background-image: url('dist/img/fdo_type-5.png')"></div>
+
+					</figure>
+
+				</div>
+
+			</section>
 
 		</section>
-
-		<section class="gallery-content" style="background-image: url('dist/img/fdo_type-2.png')">
-
-			<div class="hero-content">
-
-				<a href="#" class="link-area"></a>
-
-			</div>
-
-		</section>
-
-		<section class="gallery-content" style="background-image: url('dist/img/fdo_type-3.png')">
-
-			<div class="hero-content">
-
-				<a href="#" class="link-area"></a>
-
-			</div>
-
-		</section>
-
-		<section class="gallery-content" style="background-image: url('dist/img/fdo_type-4.png')">
-
-			<div class="hero-content">
-
-				<a href="#" class="link-area"></a>
-
-			</div>
-
-		</section>
-
-		<section class="gallery-content" style="background-image: url('dist/img/fdo_type-5.png')">
-
-			<div class="hero-content">
-
-				<a href="#" class="link-area"></a>
-
-			</div>
-
-		</section>
-
 
 	</article>
 
@@ -603,7 +531,7 @@
 		}, 800);
 	}
 
-	setTimeout(initMaps, 1000);
+//	setTimeout(initMaps, 1000);
 
 </script>
 
