@@ -118,7 +118,8 @@ gallery.translateSlides = function() {
 	w = gallery.current.offsetWidth;
 
 	for (var i = gallery.slides.length; i--; )
-		gallery.slides[i].style.left = '' + ( ( i - c ) * w ) + 'px';
+		//gallery.slides[i].style.left = '' + ( ( i - c ) * w ) + 'px';
+		gallery.slides[i].style.transform = 'translateX(' + ( ( i - c ) * w ) + 'px)';
 
 };
 

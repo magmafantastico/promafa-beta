@@ -1,16 +1,16 @@
-#main-header {
+body > header {
 	position: fixed;
 	width: 30%;
 	height: 100vh;
 	padding: 1.5% 0;
 }
 
-#main-header header,
-#main-header footer {
+body > header header,
+body > header footer {
 	padding: 2.25rem;
 }
 
-#main-header img {
+body > header img {
 	display: block;
 }
 
