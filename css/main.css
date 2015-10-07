@@ -1,3 +1,5 @@
+/* main header */
+
 body > header {
 	position: fixed;
 	width: 30%;
@@ -5,32 +7,234 @@ body > header {
 	padding: 1.5% 0;
 }
 
-body > header header,
-body > header footer {
-	padding: 2.25rem;
-}
-
 body > header img {
 	display: block;
 }
+
+/* logo */
+
+#logo {
+	height: 100%;
+	shape-rendering: optimizeQuality;
+}
+
+#logo #logo-main,
+#logo #mark {
+	display: none;
+}
+
+#logo .lines{
+	fill: #e53935;
+}
+
+#logo .mark{
+	fill: #ffffff;
+}
+
+body > header #nav-logo-wrapper {
+	display: none;
+}
+
+body > header > header .logo-wrapper {
+	height: 100px;
+	transition: none;
+	display: flex;
+	justify-content: center;
+	max-height: 60px;
+	margin: .375em 1em;
+	z-index: 3;
+}
+
+/* main nav toggle */
+
+body > header .toggle-wrapper {
+	display: none;
+}
+
+/* main menu */
+
+body > header .main-menu > .menu-item a {
+	font-weight: 900;
+	text-align: right;
+	padding: .4375em 1em;
+	text-transform: uppercase;
+	width: 100%;
+	letter-spacing: 1px;
+}
+
+/* social */
+
+body > header .social {
+	display: none;
+}
+
+/* main footer */
+
+body > header footer {
+	padding: 0 1em 0 0;
+}
+
+body > header > footer p {
+	max-width: 10em;
+	text-align: right;
+	font-size: .875em;
+	line-height: 1.1;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+body > header > footer .certificate {
+	display: none;
+}
+
+body > header > footer .certificate img {
+	width: 5em;
+}
+
+@media (min-height: 24rem) {
+
+	/* logo */
+
+	body > header > header .logo-wrapper {
+		margin: .5em 1.5em;
+	}
+
+	/* main menu */
+
+	body > header .main-menu > .menu-item a {
+		padding: .5em 1.5em;
+	}
+
+}
+
+@media (min-height: 36rem) {
+
+	/* logo */
+
+	body > header > header .logo-wrapper {
+		max-height: 72px;
+		margin: 1em 1.5em;
+	}
+
+	/* main menu */
+
+	body > header .main-menu > .menu-item a {
+		padding: .5em 1.5em;
+	}
+
+	/* social */
+
+	body > header .social {
+		display: flex;
+		padding: 1em 1.5em;
+	}
+
+	body > header .social .social-item {
+		margin: 0 0 0 .5em;
+	}
+
+    body > header .social .social-item img {
+	    height: 24px;
+	    width: 24px;
+    }
+
+	/* main footer */
+
+	body > header footer {
+		padding: 1em 1em 0 0;
+	}
+
+	body > header > footer .certificate {
+		display: flex;
+	}
+
+
+}
+
+@media (min-height: 48rem) {
+
+	/* logo */
+
+	body > header > header .logo-wrapper {
+		max-height: 96px;
+		margin: 1em 1.5em;
+	}
+
+	/* main menu */
+
+	body > header .main-menu > .menu-item a {
+		padding: .875em 2.25em;
+	}
+
+	/* social */
+
+	body > header .social {
+		padding: 1em 2.25em;
+	}
+
+	body > header .social .social-item {
+		margin: 0 0 0 .5em;
+	}
+
+	body > header .social .social-item img {
+		height: 36px;
+		width: 36px;
+	}
+
+	/* main footer */
+
+	body > header footer {
+		padding: 1em 2.25em 0 0;
+	}
+
+	body > header > footer p {
+		max-width: 10em;
+		text-align: right;
+		font-size: .875em;
+		line-height: 1.2;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	body > header > footer .certificate img {
+		width: 6em;
+		margin: .75em 0;
+	}
+
+}
+
+/* main */
 
 main {
 	position: absolute;
 	left: 30%;
 	width: 70%;
-	padding: 1.5% 1.5%;
 	z-index: 0;
 }
 
 main > .block {
 	display: block;
-	min-height: 140vh;
+	min-height: 100vh;
 	overflow: hidden;
-	padding: 20vh 0;
+	padding: 1em 1em 3em;
 }
 
 main > .block .block-inner {
-	margin: 0 4.5rem;
+	margin: 0 0;
 	overflow-y: auto;
 	overflow-x: hidden;
+}
+
+@media (min-width: 60rem) {
+
+	main > .block {
+		margin: 10vw;
+	}
+
+	main > .block .block-inner {
+		margin: 0 4em;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
 }

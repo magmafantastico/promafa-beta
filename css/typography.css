@@ -1,12 +1,87 @@
+/* main footer */
 
-h1 {
-	font-size: 8em;
-	font-weight: 100;
+body > header > footer p {
+	font-weight: 400;
+	font-size: .875em;
+	margin: 0;
 }
 
-p {
-	font-size: 1.125em;
-	margin: 0 0 1em 3em;
+/* main */
+
+main h1 {
+	font-weight: 100;
+	margin-bottom: .5em;
+	font-size: 3em;
+}
+
+main p {
+	font-size: 1em;
+	margin: 0 0 1em;
 	text-align: justify;
 	max-width: 40em;
+}
+
+@media (min-height: 24rem) {
+
+	/* main header */
+
+	body > header p {
+		font-size: 1.125em;
+		margin: .375em 0 .5em;
+	}
+
+	/* main */
+
+	main p {
+		font-size: 1.125em;
+	}
+
+}
+
+@media (max-width: 21rem) {
+
+	/* main */
+
+	main h1 {
+		font-size: 2.25em;
+		font-weight: 400;
+	}
+
+}
+
+@media (max-width: 36rem) {
+
+	/* main */
+
+	main p {
+		-webkit-hyphens: auto;
+		-moz-hyphens: auto;
+		-ms-hyphens: auto;
+		hyphens: auto;
+	}
+
+}
+
+@media (min-width: 48rem) {
+
+	/* main */
+
+	main h1 {
+		font-size: 3.75em;
+	}
+
+}
+
+@media (min-width: 48rem) {
+
+	/* main */
+
+	main h1 {
+		font-size: 4.5em;
+	}
+
+	main p {
+		margin: 0 2.25em 1em 3em;
+	}
+
 }

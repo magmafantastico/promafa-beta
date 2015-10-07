@@ -1,22 +1,11 @@
-var main = document.getElementById('main');
+/*!
+ * Mowe Gallery v1.0.0 (http://letsmowe.org/)
+ * Copyright 2013-2015 Noibe Developers
+ * Licensed under MIT (https://github.com/noibe/villa/blob/master/LICENSE)
+ */
 
 var hero = document.getElementById('hero-gallery');
 var gallerySlides = document.getElementById('hero-gallery-slides');
-
-/**
- @param {object} element
- @param {string} type
- @param {string} crossType
- @param {Function} listener
- @param {boolean} [useCapture]
- */
-var addListener = function(element, type, crossType, listener, useCapture) {
-	if (window.addEventListener)
-		element.addEventListener(type, listener, useCapture);
-	else if (crossType)
-		element.attachEvent(crossType, listener);
-};
-
 var gallery = {};
 
 /**
@@ -29,12 +18,16 @@ gallery.init = function() {
 	this.slides = gallerySlides.querySelectorAll('.gallery-content');
 	this.current = this.updateCurrent(this.getCurrent(true));
 
-	addListener(this.viewport, 'click', 'onclick', gallery.nextSlide, false);
+	addListener(this.viewport, 'click', 'onclick', gallery.ctrlClick, false);
 
-	// resize things
+	this.loopInterval = 6000;
+	addListener(window, 'resize', false, gallery.ctrlResize, false);
+
 	this.resizeGallery();
 	this.resizeSlides();
 	this.translateSlides();
+
+	this.initInfiniteLoop();
 
 };
 
@@ -104,7 +97,19 @@ gallery.nextSlide = function() {
 	}
 
 	gallery.translateSlides();
+	gallery.initInfiniteLoop();
 
+};
+
+/**
+ * Set the slide translate property (webkit and ie9 support)
+ * @param {object} a element
+ * @param {number} b width
+ */
+gallery.setSlideTranslate = function(a, b) {
+	a.style.transform = 'translateX(' + b + 'px)';
+	a.style.webkitAlignContent = 'translateX(' + b + 'px)';
+	a.style.msTransform = 'translateX(' + b + 'px)';
 };
 
 /**
@@ -114,12 +119,17 @@ gallery.translateSlides = function() {
 
 	var c, w;
 
+	gallery.allowClick = false;
+
 	c = gallery.current.index;
 	w = gallery.current.offsetWidth;
 
 	for (var i = gallery.slides.length; i--; )
-		//gallery.slides[i].style.left = '' + ( ( i - c ) * w ) + 'px';
-		gallery.slides[i].style.transform = 'translateX(' + ( ( i - c ) * w ) + 'px)';
+		gallery.setSlideTranslate(gallery.slides[i], ( i - c ) * w);
+
+	setTimeout(function() {
+		gallery.allowClick = true;
+	}, 700);
 
 };
 
@@ -138,8 +148,60 @@ gallery.resizeSlides = function() {
  */
 gallery.resizeGallery = function() {
 
-	gallery.gallery.style.width = ( gallery.viewport.offsetWidth * gallery.slides.length ) + 'px';
+	var h, w;
+
+	h = gallery.viewport.offsetWidth * .7;
+	w = gallery.viewport.offsetWidth * gallery.slides.length;
+
+	if (h > window.innerHeight) h = window.innerHeight;
+
+	gallery.gallery.style.height = h + 'px';
+	gallery.gallery.style.width = w + 'px';
 
 };
 
-gallery.init();
+/**
+ * Controller of click and touch events
+ */
+gallery.ctrlClick = function() {
+
+	if (gallery.allowClick) gallery.nextSlide();
+
+};
+
+/**
+ * Controller of size of gallery and slides
+ * Also do a nextSlide function after 1200 milliseconds
+ */
+gallery.ctrlResize = function() {
+
+	gallery.resizeGallery();
+	gallery.resizeSlides();
+
+	gallery.initInfiniteLoop(1200);
+
+};
+
+gallery.doInfiniteLoop = function() {
+
+	if (gallery.infiniteLoop) clearInterval(gallery.infiniteLoop);
+
+	gallery.loopInterval = 5000;
+	gallery.infiniteLoop = setInterval(gallery.nextSlide, gallery.loopInterval);
+
+};
+
+/**
+ * Controller the global interval function
+ */
+gallery.initInfiniteLoop = function(interval) {
+
+	if (interval) {
+		if (gallery.infiniteLoop) clearInterval(gallery.infiniteLoop);
+		gallery.infiniteLoop = setTimeout(function() {
+			gallery.nextSlide();
+			gallery.doInfiniteLoop();
+		}, interval);
+	} else gallery.doInfiniteLoop();
+
+};

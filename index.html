@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--roboto-->
 <html lang="en" class="roboto">
 <head>
 	<meta charset="UTF-8">
@@ -7,11 +8,12 @@
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
 	<script src="dist/js/villa.min.js"></script>
 	<link rel="stylesheet" href="dist/css/villa.min.css"/>
-	<link rel="stylesheet" href="css/typography.css"/>
 	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="css/typography.css"/>
 	<link rel="stylesheet" href="css/gallery.css"/>
 	<link rel="stylesheet" href="css/mobile.css"/>
-	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<link rel="stylesheet" href="css/icon.css"/>
+	<!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 	<link rel="stylesheet" type="text/css" href="dist/css/villa-cross.css"/>
@@ -52,40 +54,31 @@
 
 	if (isMobile.any()) document.body.classList.add('mobile');
 
-	window.addEventListener('resize', function() {
-		if (isPortrait()) document.body.classList.add('mobile');
-		else document.body.classList.remove('mobile');
-	});
-
 </script>
 
-<header id="main-header" class="flex flex-column justify-between grey-100">
+<header id="main-header" class="flex flex-column justify-between">
+
+	<div class="toggle-wrapper flex justify-end font-red-700">
+
+		<div id="toggle" class="toggle flex align-center justify-center">
+
+			<span class="icon-menu open"></span>
+
+			<span class="text close">fechar</span>
+			<span class="icon-cancel close"></span>
+
+		</div>
+
+	</div>
 
 	<header class="flex justify-end">
 
-		<style>
+		<a href="#" id="logo-wrapper" class="logo-wrapper">
 
-			#logotypo {
-				height: 100px;
-				shape-rendering: optimizeQuality;
-			}
-
-			#logotypo .lines{
-				fill: #d32f2f;
-			}
-
-			#logotypo .mark{
-				fill: #ffffff;
-			}
-
-		</style>
-
-		<a href="#" class="logo-wrapper">
-
-			<svg version="1.1" id="logotypo" class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			<svg version="1.1" id="logo" class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1000 600" style="enable-background:new 0 0 1000 600;" xml:space="preserve">
 
-				<g id="lines">
+				<g id="logo-lines">
 					<path id="XMLID_37_" class="lines" d="M6.9,350H500v-45H0.1C0.5,320.3,2.8,335.3,6.9,350z"/>
 					<path id="XMLID_29_" class="lines" d="M28.5,400H500v-45H8.4C13.2,370.4,19.9,385.5,28.5,400z"/>
 					<path id="XMLID_35_" class="lines" d="M66.9,450H500v-45H31.5C41.2,420.7,53.1,435.7,66.9,450z"/>
@@ -93,11 +86,11 @@
 					<path id="XMLID_33_" class="lines" d="M223.5,550H500v-45H135C161.4,522,191.2,537.1,223.5,550z"/>
 					<path id="XMLID_31_" class="lines" d="M500,600v-45H236.5C313,583.5,403.3,600,500,600z"/>
 				</g>
-				<g id="main">
+				<g id="logo-main">
 					<path id="half-circle_1_" class="lines" d="M1000,300C1000,134.3,776.1,0,500,0C318.4,0,159.4,58.1,71.8,145h0v0
 						C26.2,190.2,0,243.3,0,300H1000z"/>
 				</g>
-				<g id="main-marked">
+				<g id="logo-main-marked">
 					<path id="half-circle-marked" class="lines" d="M500,0C223.9,0,0,134.3,0,300h1000C1000,134.3,776.1,0,500,0z M138.4,222.3h-32.1
 						l-8.5,41.1H79l22.2-107.1h43c33.4,0,33.4,22.6,33.4,32.7C177.6,189.6,177.2,222.3,138.4,222.3z M271.8,212.7v0.3
 						c9,3.3,11.4,10.5,11.4,19.3c0,7.3-1.8,14.8-1.6,22.2c0,3,0.3,6.1,1.9,8.8h-19.6c-0.9-2.7-1.2-5.3-1.2-8.2c0-7.9,1.8-15.6,1.8-23.4
@@ -195,84 +188,55 @@
 
 			</svg>
 
+			<!--<img src="dist/img/logotipo.png" alt=""/>-->
+
 		</a>
-		
+
 	</header>
 
-	<nav id="main-nav" class="nav">
+	<nav id="main-nav" class="main-nav">
 
-		<style scoped>
+		<div class="main-menu-wrapper flex justify-end align-end">
 
-			ul li a {
-				font-weight: 900;
-				text-align: right;
-				padding: .875em 2.25rem;
-				text-transform: uppercase;
-				width: 100%;
-				letter-spacing: 1px;
-			}
+			<header class="flex justify-center align-center">
 
-		</style>
+				<div id="nav-logo-wrapper"></div>
 
-		<ul class="flex flex-column child-flex">
-			<li><a href="#about" class="hfont-red-400 ">Institucional</a></li>
-			<li><a href="#products" class="hfont-brown-200 ">Produtos</a></li>
-			<li><a href="#recipes" class="hfont-green-300 ">Receitas</a></li>
-			<li><a href="#local" class="hfont-yellow-700 ">Localização</a></li>
-			<li><a href="#reps" class="hfont-deep-purple-300 ">Representes</a></li>
-			<li><a href="#contact" class="hfont-brown-400 ">Contato</a></li>
-		</ul>
+			</header>
+
+			<ul id="main-menu" class="main-menu flex flex-column child-flex">
+				<li class="menu-item"><a href="#about" class="hfont-red-400 ">Institucional</a></li>
+				<li class="menu-item"><a href="#products" class="hfont-brown-200 ">Produtos</a></li>
+				<li class="menu-item"><a href="#recipes" class="hfont-green-300 ">Receitas</a></li>
+				<li class="menu-item"><a href="#local" class="hfont-yellow-700 ">Localização</a></li>
+				<li class="menu-item"><a href="#reps" class="hfont-deep-purple-300 ">Representes</a></li>
+				<li class="menu-item"><a href="#contact" class="hfont-brown-400 ">Contato</a></li>
+			</ul>
+
+		</div>
 
 	</nav>
 
-	<ul class="flex flex-row justify-end">
+	<ul class="social flex flex-row justify-end">
 
-		<style scoped>
-
-			ul {
-				padding: 0 2.25rem;
-			}
-
-			li {
-				margin: .375em;
-			}
-
-			img {
-				height: 32px;
-				width: 32px;
-			}
-
-		</style>
-
-		<li><a href="http://facebook.com"><img src="dist/img/facebook.png" alt=""/></a></li>
-		<li><a href="http://facebook.com"><img src="dist/img/instagram.png" alt=""/></a></li>
-		<li><a href="http://facebook.com"><img src="dist/img/blogger.png" alt=""/></a></li>
+		<li class="social-item"><a href="http://facebook.com"><img src="dist/img/facebook.png" alt=""/></a></li>
+		<li class="social-item"><a href="http://facebook.com"><img src="dist/img/instagram.png" alt=""/></a></li>
+		<li class="social-item"><a href="http://facebook.com"><img src="dist/img/blogger.png" alt=""/></a></li>
 
 	</ul>
 
 	<footer class="flex flex-column align-end justify-end">
 
-		<style scoped>
+		<div class="certificate flex flex-column justify-end align-end">
 
-			img {
-				margin-bottom: .5em;
-			}
+			<img src="dist/img/sgs_iso_9001_tpl.png" alt=""/>
 
-			p {
-				max-width: 14em;
-				text-align: right;
-				font-size: .875em;
-				font-weight: 600;
-				text-transform: uppercase;
-			}
+			<p>Empresa certificada
+				<br/>iso 9001:2008</p>
 
-		</style>
+		</div>
 
-		<img src="dist/img/sgs_iso_9001_tpl.png" width="100" alt=""/>
-
-		<p>Empresa certificada
-			<br/>iso 9001:2008</p>
-		<p>Copyright © 2015 PROMAFA.</p>
+		<p class="copyright">Copyright © 2015 PROMAFA.</p>
 
 	</footer>
 
@@ -319,20 +283,6 @@
 					<figure class="hero-image">
 
 						<div class="hero-image-inner" style="background-image: url('dist/img/fdo_type-3.png')"></div>
-
-					</figure>
-
-				</div>
-
-			</section>
-
-			<section class="gallery-content current">
-
-				<div class="hero-content">
-
-					<figure class="hero-image">
-
-						<div class="hero-image-inner" style="background-image: url('dist/img/fdo_type-4.png')"></div>
 
 					</figure>
 
@@ -596,109 +546,14 @@
 
 </main>
 
+<script src="js/f.js"></script>
 <script src="js/gallery.js"></script>
+<script src="js/main.js"></script>
+<script src="js/maps.js"></script>
 <script>
 
-	var resizeMain = function() {
-		var windowHeigth = window.innerHeight;
-		var windowWidth = window.innerWidth;
-
-		var mainWidth, navWidth;
-
-		var ratio;
-
-		if (windowWidth < windowHeigth * 1.5 + 360) {
-
-			// 4 x 3 = 1,333
-			mainWidth = ( windowHeigth / 3 ) * 4;
-			navWidth = windowWidth - mainWidth;
-			ratio = '<1.333';
-
-			if (windowWidth < windowHeigth * 1.333 + 240) {
-				// 6 x 5 = 1.2
-				mainWidth = windowHeigth * 1.2;
-				navWidth = windowWidth - mainWidth;
-				ratio = '<1.2';
-			}
-
-		} else {
-			// 2 x 1 = 1,5
-			mainWidth = windowHeigth * 1.5;
-			navWidth = windowWidth - mainWidth;
-			ratio = '>1.5';
-		}
-
-		console.log(ratio);
-
-		nav.style.width = navWidth + 'px';
-		main.style.width = mainWidth + 'px';
-		main.style.left = navWidth + 'px';
-	};
-
-//	resizeMain();
-//	window.addEventListener('resize', resizeMain);
-
-
-
-//AIzaSyAk-UYOSdeb5RSXqx_gwSnTSW0rRFqXT5Q
-
-	var localMap = document.getElementById('local-map');
-	var repsMap = document.getElementById('reps-map');
-
-	function initLocalMap(canvas) {
-
-		var myLatLng = {lat: -22.7753073, lng: -50.2077834};
-
-		var styleArray = [
-			{
-				featureType: "all",
-				stylers: [
-					{ saturation: -80 }
-				]
-			},{
-				featureType: "road.arterial",
-				elementType: "geometry",
-				stylers: [
-					{ hue: "#00ffee" },
-					{ saturation: 50 }
-				]
-			},{
-				featureType: "poi",
-				stylers: [
-					{ visibility: "on" }
-				]
-			}
-		];
-
-		var mapOptions = {
-			scrollwheel: false,
-			center: myLatLng,
-			zoom: 17,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			styles: styleArray
-		};
-
-		var map = new google.maps.Map(canvas, mapOptions);
-
-		var marker = new google.maps.Marker({
-			map: map,
-			position: myLatLng,
-			title: 'Hello World!'
-		});
-
-
-	}
-
-	function initMaps() {
-		setTimeout(function() {
-			initLocalMap(localMap);
-			setTimeout(function() {
-				initLocalMap(repsMap);
-			}, 800);
-		}, 800);
-	}
-
-//	setTimeout(initMaps, 1000);
+	gallery.init();
+	main.init();
 
 </script>
 
