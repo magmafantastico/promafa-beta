@@ -109,7 +109,7 @@ body.mobile #logo-wrapper {
 }
 
 body.mobile.active-nav #nav-logo-wrapper {
-	display: flex;
+	display: none;
 	height: 96px;
 	max-height: 96px;
 }

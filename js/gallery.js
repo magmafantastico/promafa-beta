@@ -4,8 +4,10 @@
  * Licensed under MIT (https://github.com/noibe/villa/blob/master/LICENSE)
  */
 
+var main = document.getElementById('main');
 var hero = document.getElementById('hero-gallery');
 var gallerySlides = document.getElementById('hero-gallery-slides');
+
 var gallery = {};
 
 /**
@@ -13,6 +15,7 @@ var gallery = {};
  */
 gallery.init = function() {
 
+	this.main = main;
 	this.viewport = hero;
 	this.gallery = gallerySlides;
 	this.slides = gallerySlides.querySelectorAll('.gallery-content');
@@ -175,8 +178,10 @@ gallery.ctrlClick = function() {
  */
 gallery.ctrlResize = function() {
 
-	gallery.resizeGallery();
-	gallery.resizeSlides();
+	setTimeout(function() {
+		gallery.resizeGallery();
+		gallery.resizeSlides();
+	}, 400);
 
 	gallery.initInfiniteLoop(1200);
 

@@ -39,7 +39,7 @@ main.updateHeaderHeight = function(headerHeight) {
 
 main.goToAnchor = function() {
 
-	main.toggleNav(false);
+	scroll.to(3000);
 
 };
 
@@ -49,7 +49,9 @@ main.ctrlMenuItemClick = function() {
 
 	t = 0;
 
-	if (main.body.classList.contains('body')) {
+	if (main.body.classList.contains('mobile')) {
+
+		main.toggleNav(false);
 
 		t = 1200;
 

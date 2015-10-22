@@ -18,3 +18,11 @@ var getScrollTop = function() {
 	var doc = document.documentElement;
 	return (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
 };
+
+var scroll = {};
+
+scroll.to = function(a) {
+
+	scrollTo(a, a);
+
+};

@@ -3,7 +3,8 @@ main > #hero-gallery.block {
 	max-height: 97vh;
 	min-height: 50vh;
 	padding: 0;
-	margin: 1em;
+	margin: 1em 0;
+	width: 100%;
 }
 
 .hero-slides {
