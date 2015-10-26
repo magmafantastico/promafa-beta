@@ -1,0 +1,25 @@
+#local-reps.block {
+	padding: 0;
+}
+
+#local-reps.block .block-inner {
+	margin: 0;
+}
+
+#reps-map {
+	margin: 0;
+	height: 30em;
+	width: 100%;
+	max-width: 50%;
+}
+
+.reps {
+	overflow-y: auto;
+	height: 16em;
+	width: 100%;
+}
+
+.reps .rep {
+	display: block;
+	font-size: .75em;
+}

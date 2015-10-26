@@ -13,6 +13,11 @@
 	<link rel="stylesheet" href="css/gallery.css"/>
 	<link rel="stylesheet" href="css/mobile.css"/>
 	<link rel="stylesheet" href="css/icon.css"/>
+	<link rel="stylesheet" href="css/products.css"/>
+	<link rel="stylesheet" href="css/element.css"/>
+	<link rel="stylesheet" href="css/recipes.css"/>
+	<link rel="stylesheet" href="css/local.css"/>
+	<link rel="stylesheet" href="css/reps.css"/>
 	<!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
@@ -209,7 +214,7 @@
 				<li class="menu-item"><a href="#products" class="hfont-brown-200 ">Produtos</a></li>
 				<li class="menu-item"><a href="#recipes" class="hfont-green-300 ">Receitas</a></li>
 				<li class="menu-item"><a href="#local" class="hfont-yellow-700 ">Localização</a></li>
-				<li class="menu-item"><a href="#reps" class="hfont-deep-purple-300 ">Representes</a></li>
+				<li class="menu-item"><a href="#local-reps" class="hfont-deep-purple-300 ">Representes</a></li>
 				<li class="menu-item"><a href="#contact" class="hfont-brown-400 ">Contato</a></li>
 			</ul>
 
@@ -308,167 +313,177 @@
 
 	</article>
 
-	<article id="about" class="block font-red-900">
+	<article id="about" class="block font-white red-600">
 
 		<div class="block-inner">
 
-			<h1>Institucional</h1>
+			<div class="container wide">
 
-			<p>A empresa foi fundada em 13 de março de 1.969, um dos fundadores foi o atual proprietário Antonio Fadel, que com irmãos e primos vieram de Conchal, cidadezinha próxima a Mogi Mirim, para investir em Palmital, cidade que tinha muitas previsões de crescimento devido à terra produtiva.</p>
+				<h1>Institucional</h1>
 
-			<p>No ano de 1.988 a sociedade foi dissolvida e Antonio começa uma nova sociedade com seus filhos. Nesta época o principal produto era farinha de raspa de mandioca, esta farinha era utilizada na mistura com farinha de trigo, devido à escassez do trigo nacional nesta época.</p>
+				<p>A empresa foi fundada em 13 de março de 1.969, um dos fundadores foi o atual proprietário Antonio Fadel, que com irmãos e primos vieram de Conchal, cidadezinha próxima a Mogi Mirim, para investir em Palmital, cidade que tinha muitas previsões de crescimento devido à terra produtiva.</p>
 
-			<p>Atualmente a empresa produz derivados de mandioca como: fécula, farinha de raspa, polvilho doce, polvilho azedo e tapioca hidratada. A Promafa cresceu de forma consistente e seu crescimento foi baseado sempre na qualidade de seu produto e no atendimento primordial ao cliente.</p>
+				<p>No ano de 1.988 a sociedade foi dissolvida e Antonio começa uma nova sociedade com seus filhos. Nesta época o principal produto era farinha de raspa de mandioca, esta farinha era utilizada na mistura com farinha de trigo, devido à escassez do trigo nacional nesta época.</p>
 
-			<p>Trabalhos que preservem a segurança e saúde dos seus funcionários e a preservação do meio ambiente serão considerados prioritários e terão o respaldo da diretoria.</p>
+				<p>Atualmente a empresa produz derivados de mandioca como: fécula, farinha de raspa, polvilho doce, polvilho azedo e tapioca hidratada. A Promafa cresceu de forma consistente e seu crescimento foi baseado sempre na qualidade de seu produto e no atendimento primordial ao cliente.</p>
 
-			<p>A preservação do meio ambiente será ponto estratégico do nosso negócio, na busca constante do melhoramento contínuo dos processos.</p>
+				<p>Trabalhos que preservem a segurança e saúde dos seus funcionários e a preservação do meio ambiente serão considerados prioritários e terão o respaldo da diretoria.</p>
 
-			<p>Para atender a esta política, delega a cada funcionário individualmente, o comprometimento pessoal, encorajando e facilitando a autoconfiança, simplicidade e agilidade em cada tarefa executada.</p>
+				<p>A preservação do meio ambiente será ponto estratégico do nosso negócio, na busca constante do melhoramento contínuo dos processos.</p>
+
+				<p>Para atender a esta política, delega a cada funcionário individualmente, o comprometimento pessoal, encorajando e facilitando a autoconfiança, simplicidade e agilidade em cada tarefa executada.</p>
+
+			</div>
 
 		</div>
 
 	</article>
 
-	<article id="products" class="block brown-200 font-white">
+	<article id="products" class="block font-white red-700">
 
-		<div class="block-inner">
+		<div class="block-inner flex flex-column align-center">
 
-			<h1>Produtos</h1>
+			<div class="container wide">
 
-			<p>A PROMAFA produz derivados de mandioca como: fécula, farinha de raspa, polvilho doce, polvilho azedo e tapioca hidratada.</p>
+				<h1>Produtos</h1>
 
-			<p>Todos os produtos atendem as exigências de qualidade do mercado.</p>
+				<p>A PROMAFA produz derivados de mandioca como: fécula, farinha de raspa, polvilho doce, polvilho azedo e tapioca hidratada.</p>
 
-			<style scoped>
+			</div>
 
-				.products.ul {
-					margin-top: 6rem;
-				}
+			<div class="container wide">
 
-				.products li a {
-					display: flex;
-					align-items: center;
-					height: 24rem;
-					padding: 0 3rem;
-					border-radius: 50%;
-				}
+				<ul class="products flex font-red-900 flex-wrap flex-row child-flex justify-around child-justify-start child-align-center">
 
-				.products li a img {
-					width: 18rem;
-					display: block;
-				}
+					<li class="product flex-column white  border-red-900">
 
-			</style>
+						<header class="product-header flex justify-center align-center">
 
-			<ul class="products flex flex-wrap flex-row child-flex justify-around child-justify-center child-align-center">
+							<a href="#" class="flex justify-center">
 
-				<li>
+								<figure class="product-logo">
 
-					<a href="#" class="white"><img src="dist/img/fadel_marca.png" alt=""/></a>
+									<img src="dist/img/fadel_marca.png" alt=""/>
 
-				</li>
+								</figure>
 
-				<li>
+							</a>
 
-					<a href="#" class="white"><img src="dist/img/raiz_do_brasil_marca.png" alt=""/></a>
+						</header>
 
-				</li>
+						<div class="product-copy">
 
-			</ul>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias corporis iusto rerum sed sunt.</p>
+
+						</div>
+
+						<footer class="flex justify-center">
+
+							<a href="#" class="btn ghost font-red-900 border-red-900 h-red-900 hfont-white">Informações</a>
+
+						</footer>
+
+					</li>
+
+					<li class="product flex-column white  border-red-900">
+
+						<header class="product-header flex justify-center align-center">
+
+							<a href="#" class="flex justify-center">
+
+								<figure class="product-logo">
+
+									<img src="dist/img/raiz_do_brasil_marca.png" alt=""/>
+
+								</figure>
+
+							</a>
+
+						</header>
+
+						<div class="product-copy">
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid doloremque est tempora?</p>
+
+						</div>
+
+						<footer class="flex justify-center">
+
+							<a href="#" class="btn ghost font-red-900 border-red-900 h-red-900 hfont-white">Visite o hotsite</a>
+
+						</footer>
+
+					</li>
+
+				</ul>
+
+			</div>
+
+			<div class="container">
+
+				<p class="ps">Todos os produtos atendem as exigências de qualidade do mercado.</p>
+
+			</div>
 
 		</div>
 
 	</article>
 
-	<article id="recipes" class="block font-green-400">
+	<article id="recipes" class="block red-600 font-white">
 
-		<div class="block-inner">
+		<div class="block-inner flex child-grow-1">
 
-			<h1>Receitas</h1>
+			<header class="recipes-header flex flex-column justify-center">
 
-			<p class="font-green-700">Aqui você encontra as mais deliciosas receitas com nossos produtos. Prove estas delícias!</p>
+				<h1>Receitas</h1>
 
-			<style scoped>
+				<p class="">Aqui você encontra as mais deliciosas receitas com nossos produtos. Prove estas delícias!</p>
 
-				.recipes ul {
-					margin-top: 4.5rem;
-				}
+			</header>
 
-				.recipes li a {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					margin: 0 2.25rem 2.25rem;
-				}
+			<ul class="recipes flex flex-column flex-wrap flex-row justify-around align-center">
 
-				.recipes li a img {
-					border-radius: 50%;
-					width: 14rem;
-					height: 14rem;
-					display: block;
-				}
+				<li class="recipe">
 
-				.recipes li a h2 {
-					font-size: 1.5em;
-					font-weight: 300;
-				}
+					<a class="select-area">
 
-			</style>
+						<header class="recipe-header">
 
-			<ul class="recipes flex flex-wrap flex-row child-flex justify-around child-justify-center child-align-center">
+							<figure class="recipe-image" style="background-image: url('dist/img/tapioca_01.png')"></figure>
 
-				<li>
+							<span class="recipe-title">
+								<h1>Lorem ipsum</h1>
+							</span>
 
-					<a href="#" class="">
-						<img src="dist/img/tapioca_01.png" alt=""/>
-						<h2>Lorem ipsum</h2>
+						</header>
+
 					</a>
+
+					<div class="recipe-inner">
+
+					</div>
 
 				</li>
 
-				<li>
+				<li class="recipe">
 
-					<a href="#" class="">
-						<img src="dist/img/tapioca_02.png" alt=""/>
-						<h2>Lorem ipsum</h2>
+					<a class="select-area">
+
+						<header class="recipe-header">
+
+							<figure class="recipe-image" style="background-image: url('dist/img/tapioca_02.png')"></figure>
+
+							<span class="recipe-title">
+								<h1>Lorem ipsum</h1>
+							</span>
+
+						</header>
+
 					</a>
 
-				</li>
+					<div class="recipe-inner">
 
-				<li>
-
-					<a href="#" class="">
-						<img src="dist/img/tapioca_03.png" alt=""/>
-						<h2>Lorem ipsum</h2>
-					</a>
-
-				</li>
-
-				<li>
-
-					<a href="#" class="">
-						<img src="dist/img/tapioca_04.png" alt=""/>
-						<h2>Lorem ipsum</h2>
-					</a>
-
-				</li>
-
-				<li>
-
-					<a href="#" class="">
-						<img src="dist/img/tapioca_05.png" alt=""/>
-						<h2>Lorem ipsum</h2>
-					</a>
-
-				</li>
-
-				<li>
-
-					<a href="#" class="">
-						<img src="dist/img/tapioca_06.png" alt=""/>
-						<h2>Lorem ipsum</h2>
-					</a>
+					</div>
 
 				</li>
 
@@ -480,55 +495,110 @@
 
 	<article id="local" class="block yellow-700 font-white">
 
-		<div class="block-inner">
+		<div class="container">
 
-			<h1>Localização</h1>
+			<div class="block-inner">
 
-			<p>PROMAFA - Produtos de Mandioca Fadel
-				<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
-				<br/>Fax: (18) 3351 5576
-				<br/>Rua São Paulo, 43
-				<br/>Cep.: 19.970-000 • Palmital/SP</p>
+				<h1>Localização</h1>
 
-			<style scoped>
+				<p>PROMAFA - Produtos de Mandioca Fadel
+					<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
+					<br/>Fax: (18) 3351 5576
+					<br/>Rua São Paulo, 43
+					<br/>Cep.: 19.970-000 • Palmital/SP</p>
 
-				#local-map {
-					margin-top: 2.25rem;
-					height: 30em;
-					width: 100%;
-				}
+				<div id="local-map"></div>
 
-			</style>
-
-			<div id="local-map"></div>
+			</div>
 
 		</div>
 
 	</article>
 
-	<article id="reps" class="block deep-purple-300 font-white">
+	<article id="local-reps" class="block deep-purple-300 font-white">
 
 		<div class="block-inner">
 
-			<h1>Representantes</h1>
+			<div id="local-reps-about">
 
-			<style scoped>
+				<div class="container">
 
-				#reps-map {
-					margin: 2.25rem 0;
-					height: 30em;
-					width: 100%;
-				}
+					<h1>Representantes</h1>
 
-			</style>
+				</div>
 
-			<div id="reps-map"></div>
+			</div>
 
-			<p>PROMAFA - Produtos de Mandioca Fadel
-				<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
-				<br/>Fax: (18) 3351 5576
-				<br/>Rua São Paulo, 43
-				<br/>Cep.: 19.970-000 • Palmital/SP</p>
+			<div id="reps-wrapper" class="flex">
+
+				<ul id="reps" class="reps">
+
+					<li class="rep">
+
+						<p>PROMAFA - Produtos de Mandioca Fadel
+							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
+							<br/>Fax: (18) 3351 5576
+							<br/>Rua São Paulo, 43
+							<br/>Cep.: 19.970-000 • Palmital/SP</p>
+
+					</li>
+
+					<li class="rep">
+
+						<p>PROMAFA - Produtos de Mandioca Fadel
+							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
+							<br/>Fax: (18) 3351 5576
+							<br/>Rua São Paulo, 43
+							<br/>Cep.: 19.970-000 • Palmital/SP</p>
+
+					</li>
+
+					<li class="rep">
+
+						<p>PROMAFA - Produtos de Mandioca Fadel
+							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
+							<br/>Fax: (18) 3351 5576
+							<br/>Rua São Paulo, 43
+							<br/>Cep.: 19.970-000 • Palmital/SP</p>
+
+					</li>
+
+					<li class="rep">
+
+						<p>PROMAFA - Produtos de Mandioca Fadel
+							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
+							<br/>Fax: (18) 3351 5576
+							<br/>Rua São Paulo, 43
+							<br/>Cep.: 19.970-000 • Palmital/SP</p>
+
+					</li>
+
+					<li class="rep">
+
+						<p>PROMAFA - Produtos de Mandioca Fadel
+							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
+							<br/>Fax: (18) 3351 5576
+							<br/>Rua São Paulo, 43
+							<br/>Cep.: 19.970-000 • Palmital/SP</p>
+
+					</li>
+
+					<li class="rep">
+
+						<p>PROMAFA - Produtos de Mandioca Fadel
+							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
+							<br/>Fax: (18) 3351 5576
+							<br/>Rua São Paulo, 43
+							<br/>Cep.: 19.970-000 • Palmital/SP</p>
+
+					</li>
+
+				</ul>
+
+
+				<div id="reps-map" class="red"></div>
+
+			</div>
 
 		</div>
 

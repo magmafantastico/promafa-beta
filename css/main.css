@@ -133,10 +133,10 @@ body > header > footer .certificate img {
 		margin: 0 0 0 .5em;
 	}
 
-    body > header .social .social-item img {
-	    height: 24px;
-	    width: 24px;
-    }
+	body > header .social .social-item img {
+		height: 24px;
+		width: 24px;
+	}
 
 	/* main footer */
 
@@ -220,21 +220,34 @@ main > .block {
 }
 
 main > .block .block-inner {
-	margin: 0 0;
-	overflow-y: auto;
-	overflow-x: hidden;
+	margin: 5vh 0;
+	width: 100%;
+}
+
+main > .block .container {
+	width: 100%;
 }
 
 @media (min-width: 60rem) {
 
-	main > .block {
-		margin: 10vw;
+	main > .block .block-inner {
+		/*margin: 1.5em 1.5em;*/
 	}
 
-	main > .block .block-inner {
-		margin: 0 4em;
-		overflow-y: auto;
-		overflow-x: hidden;
+}
+
+@media (min-width: 72rem) {
+
+	main > .block {
+		margin: 0 0;
 	}
+
+	main > .block .container {
+		max-width: 48em;
+	}
+
+    main > .block .container.wide {
+	    max-width: 60em;
+    }
 
 }
