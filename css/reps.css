@@ -1,25 +1,174 @@
-#local-reps.block {
-	padding: 0;
-}
-
-#local-reps.block .block-inner {
-	margin: 0;
-}
-
-#reps-map {
-	margin: 0;
-	height: 30em;
-	width: 100%;
-	max-width: 50%;
-}
-
 .reps {
 	overflow-y: auto;
 	height: 16em;
 	width: 100%;
 }
 
+.reps.block {
+	height: 100vh;
+	padding: 0 !important;
+}
+
+.reps.block .block-inner {
+	margin: 0;
+}
+
+.reps.block .block-inner,
+.reps .reps-wrapper,
+.reps .reps-header,
+.reps .reps-list,
+.reps .reps-map {
+	height: 100%;
+}
+
+/* Reps Frame Structure */
+
+.reps .frames {
+	display: flex;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.reps .frames .frame {
+	position: absolute;
+	height: 100%;
+}
+
+.reps .frames.animate .frame {
+	-webkit-transition: transform .5s;
+	-moz-transition: transform .5s;
+	-ms-transition: transform .5s;
+	-o-transition: transform .5s;
+	transition: transform .5s;
+}
+
+/* Reps Header */
+
+.reps .reps-header {
+	display: flex;
+	flex-direction: column;
+	width: 60%;
+}
+
+/* Reps List */
+
+.reps .reps-list {
+	width: 100%;
+	padding: 0 .5em .5em 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
 .reps .rep {
-	display: block;
+	max-width: 26em;
+	opacity: 0;
+	-webkit-transition: opacity .4s ease-in;
+	-moz-transition: opacity .4s ease-in;
+	-ms-transition: opacity .4s ease-in;
+	-o-transition: opacity .4s ease-in;
+	transition: opacity .4s ease-in;
+	width: 100%;
+}
+
+.reps .rep.build {
+	opacity: 1;
+	-webkit-transition: opacity .2s ease-in;
+	-moz-transition: opacity .2s ease-in;
+	-ms-transition: opacity .2s ease-in;
+	-o-transition: opacity .2s ease-in;
+	transition: opacity .2s ease-in;
+}
+
+.reps .rep .rep-inner {
+	background-color: #ffffff;
+	border-radius: 2px;
+	box-shadow: 1px 1px 4px -1px rgba(0,0,0,.2);
+	display: flex;
+	justify-content: space-between;
+	margin: .5em 0 0 .5em;
+	min-height: 8em;
+	padding: .6875em .375em .6875em .75em;
+}
+
+.reps .rep:last-child .rep-inner {
+	margin-bottom: .5em;
+}
+
+.reps .rep span {
 	font-size: .75em;
+}
+
+.reps .rep .rep-header span {
+	color: #757575;
+}
+
+.reps .rep .rep-title {
+	font-weight: 900;
+	margin-bottom: .375em;
+	max-width: 14em;
+}
+
+.reps .rep .rep-title span {
+	color: #212121;
+	font-size: .875em;
+}
+
+.reps .rep .rep-address {
+	max-width: 12em;
+}
+
+.reps .rep .rep-footer {
+	display: flex;
+}
+
+.reps .rep a,
+.reps .rep .rep-footer span {
+	color: #00b0ff;
+}
+
+.reps .rep a:hover span {
+	color: #0091ea;
+}
+
+.reps .rep .rep-footer .link {
+	margin: 0 0 0 .5em;
+}
+
+.reps .rep .rep-footer .link a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.reps .rep .rep-footer .link .icon {
+	font-size: 175%;
+}
+
+@media (min-width: 96em) {
+
+	.reps.rep {
+		max-width: 28em;
+	}
+
+	.reps .rep span {
+		font-size: .875em;
+	}
+
+	.reps .rep .rep-title {
+		min-height: 3em;
+		max-width: 16em;
+	}
+
+	.reps .rep .rep-title span {
+		font-size: 1em;
+	}
+
+}
+
+/* Reps Map */
+
+.reps .reps-map {
+	width: 40%;
 }

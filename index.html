@@ -18,11 +18,11 @@
 	<link rel="stylesheet" href="css/recipes.css"/>
 	<link rel="stylesheet" href="css/local.css"/>
 	<link rel="stylesheet" href="css/reps.css"/>
-	<!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<!--[if lt IE 9]>
 	<link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 	<link rel="stylesheet" type="text/css" href="dist/css/villa-cross.css"/>
-	<link rel="stylesheet" type="text/css" href="css/cross.css"/>
+	<link rel="stylesheet" type="text/css" href="css/cross/cross.css"/>
 	<script src="dist/js/html5shiv.js"></script>
 	<script src="dist/js/html5shiv-printshiv.js"></script>
 	<script src="dist/js/classList.min.js"></script>
@@ -214,7 +214,7 @@
 				<li class="menu-item"><a href="#products" class="hfont-brown-200 ">Produtos</a></li>
 				<li class="menu-item"><a href="#recipes" class="hfont-green-300 ">Receitas</a></li>
 				<li class="menu-item"><a href="#local" class="hfont-yellow-700 ">Localização</a></li>
-				<li class="menu-item"><a href="#local-reps" class="hfont-deep-purple-300 ">Representes</a></li>
+				<li class="menu-item"><a href="#reps" class="hfont-deep-purple-300 ">Representantes</a></li>
 				<li class="menu-item"><a href="#contact" class="hfont-brown-400 ">Contato</a></li>
 			</ul>
 
@@ -515,92 +515,35 @@
 
 	</article>
 
-	<article id="local-reps" class="block deep-purple-300 font-white">
+	<article id="reps" class="reps block deep-purple-300 font-white">
 
-		<div class="block-inner">
+		<section id="reps-frames" class="frames red">
 
-			<div id="local-reps-about">
+			<section id="reps-intro" class="frame reps-intro white active">
 
-				<div class="container">
+				<a id="reps-modal-open" class="btn ghost toggle">Abrir</a>
 
-					<h1>Representantes</h1>
+			</section>
+
+			<section id="reps-content" class="frame reps-content blue">
+
+				<div id="reps-wrapper" class="reps-wrapper flex grey">
+
+					<header class="reps-header">
+
+						<div id="reps-select" class="reps-select"></div>
+
+						<ul id="reps-list" class="reps-list flex flex-wrap align-start content-start"></ul>
+
+					</header>
+
+					<div id="reps-map" class="reps-map blue"></div>
 
 				</div>
 
-			</div>
+			</section>
 
-			<div id="reps-wrapper" class="flex">
-
-				<ul id="reps" class="reps">
-
-					<li class="rep">
-
-						<p>PROMAFA - Produtos de Mandioca Fadel
-							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
-							<br/>Fax: (18) 3351 5576
-							<br/>Rua São Paulo, 43
-							<br/>Cep.: 19.970-000 • Palmital/SP</p>
-
-					</li>
-
-					<li class="rep">
-
-						<p>PROMAFA - Produtos de Mandioca Fadel
-							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
-							<br/>Fax: (18) 3351 5576
-							<br/>Rua São Paulo, 43
-							<br/>Cep.: 19.970-000 • Palmital/SP</p>
-
-					</li>
-
-					<li class="rep">
-
-						<p>PROMAFA - Produtos de Mandioca Fadel
-							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
-							<br/>Fax: (18) 3351 5576
-							<br/>Rua São Paulo, 43
-							<br/>Cep.: 19.970-000 • Palmital/SP</p>
-
-					</li>
-
-					<li class="rep">
-
-						<p>PROMAFA - Produtos de Mandioca Fadel
-							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
-							<br/>Fax: (18) 3351 5576
-							<br/>Rua São Paulo, 43
-							<br/>Cep.: 19.970-000 • Palmital/SP</p>
-
-					</li>
-
-					<li class="rep">
-
-						<p>PROMAFA - Produtos de Mandioca Fadel
-							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
-							<br/>Fax: (18) 3351 5576
-							<br/>Rua São Paulo, 43
-							<br/>Cep.: 19.970-000 • Palmital/SP</p>
-
-					</li>
-
-					<li class="rep">
-
-						<p>PROMAFA - Produtos de Mandioca Fadel
-							<br/>Tel.: (18) 3351 1457 • (18) 3351 1491
-							<br/>Fax: (18) 3351 5576
-							<br/>Rua São Paulo, 43
-							<br/>Cep.: 19.970-000 • Palmital/SP</p>
-
-					</li>
-
-				</ul>
-
-
-				<div id="reps-map" class="red"></div>
-
-			</div>
-
-		</div>
+		</section>
 
 	</article>
 
@@ -620,10 +563,17 @@
 <script src="js/gallery.js"></script>
 <script src="js/main.js"></script>
 <script src="js/maps.js"></script>
+<script src="js/reps.js"></script>
 <script>
 
 	gallery.init();
 	main.init();
+	reps.init();
+
+	setTimeout(function() {
+		reps.map.init();
+		reps.list.init();
+	}, 8000);
 
 </script>
 

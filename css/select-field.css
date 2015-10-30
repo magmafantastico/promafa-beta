@@ -1,0 +1,40 @@
+.select-field {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.select-field-inner,
+.select-field-options {
+	border-radius: 1px;
+	box-shadow: 1px 1px 4px -1px rgba(0,0,0,.2);
+}
+
+.select-field-inner {
+	background-color: #ffffff;
+	margin: .5em .5em 0;
+	padding: .5em .5em .5em 3em;
+}
+
+.select-field-inner span {
+	line-height: 1.4;
+	font-size: 1.3125em;
+}
+
+.select-field-options {
+	width: 100%;
+}
+
+.select-field-options-list {
+	background-color: #ffffff;
+	border-top: solid 1px #eeeeee;
+	margin: 0 .5em .5em;
+}
+
+.select-field-options-list .option {
+	padding: .5em .5em .5em 3em;
+}
+
+.select-field-options-list .option:hover {
+	background-color: #eeeeee;
+}

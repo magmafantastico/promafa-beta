@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--roboto-->
+<html lang="en" class="roboto">
+<head>
+	<meta charset="UTF-8">
+	<title>Modal | Promafa Beta</title>
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+	<script src="dist/js/villa.min.js"></script>
+	<link rel="stylesheet" href="dist/css/villa.min.css"/>
+	<link rel="stylesheet" href="css/main.css"/>
+	<link rel="stylesheet" href="css/typography.css"/>
+	<link rel="stylesheet" href="css/element.css"/>
+	<link rel="stylesheet" href="css/mobile.css"/>
+	<link rel="stylesheet" href="css/icon.css"/>
+	<link rel="stylesheet" href="css/modal.css"/>
+	<!--<script src="https://maps.googleapis.com/maps/api/js"></script>-->
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
+	<link rel="stylesheet" type="text/css" href="dist/css/villa-cross.css"/>
+	<link rel="stylesheet" type="text/css" href="css/cross/cross.css"/>
+	<link rel="stylesheet" type="text/css" href="css/cross/modal.css"/>
+	<script src="dist/js/html5shiv.js"></script>
+	<script src="dist/js/html5shiv-printshiv.js"></script>
+	<script src="dist/js/classList.min.js"></script>
+	<![endif]-->
+</head>
+<body class="font-grey-900 bg-cover grey-100">
+
+<style>
+
+	.block {
+		height: 100vh;
+	}
+
+</style>
+
+<article id="reps" class="block">
+
+	<div class="block inner red-600 flex justify-center align-center">
+
+		<a href="#" id="modal-open" class="btn ghost border-white font-white h-white hfont-red-600">Encontrar Representantes</a>
+
+	</div>
+
+	<div id="modal" class="modal">
+
+		<div class="modal-inner">
+
+			<header class="modal-header grey-700">
+
+				<div class="left"></div>
+
+				<div class="left">
+
+					<a href="#" class="h-red-900" id="modal-close">
+
+						<span class="icon-cancel"></span>
+
+					</a>
+
+				</div>
+
+			</header>
+
+			<div class="modal-content grey"></div>
+
+		</div>
+
+	</div>
+
+</article>
+
+<script src="js/modal.js"></script>
+<script>
+
+Modal.init(document.getElementById('modal'), document.getElementById('modal-open'), document.getElementById('modal-close'))
+
+</script>
+
+</body>
+</html>

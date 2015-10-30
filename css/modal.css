@@ -1,0 +1,61 @@
+.modal {
+	position: absolute;
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	z-index: 1000;
+	-webkit-transform: translateX(100vw);
+	-moz-transform: translateX(100vw);
+	-ms-transform: translateX(100vw);
+	-o-transform: translateX(100vw);
+	transform: translateX(100vw);
+	-webkit-transition: all .4s ease-in;
+	-moz-transition: all .4s ease-in;
+	-ms-transition: all .4s ease-in;
+	-o-transition: all .4s ease-in;
+	transition: all .4s ease-in;
+}
+
+.modal.active {
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	transform: translateX(0);
+}
+
+.modal .modal-inner {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin: .5em;
+}
+
+.modal .modal-inner > * {
+	flex-grow: 1;
+}
+
+.modal .modal-header {
+	max-height: 3em;
+	align-items: stretch;
+	display: flex;
+	justify-content: space-between;
+}
+
+.modal .modal-header > *,
+.modal .modal-header > * a {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+.modal .modal-header > * a {
+	height: 3em;
+	padding: 0 .875em 0;
+}
+
+.modal .modal-content {
+	overflow-y: auto;
+	width: 100%;
+	height: 100%;
+}

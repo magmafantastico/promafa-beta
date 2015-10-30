@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'promafa';
-	src: url('../dist/font/promafa.eot?89716978');
-	src: url('../dist/font/promafa.eot?89716978#iefix') format('embedded-opentype'),
-	     url('../dist/font/promafa.woff?89716978') format('woff'),
-	     url('../dist/font/promafa.ttf?89716978') format('truetype'),
-	     url('../dist/font/promafa.svg?89716978#promafa') format('svg');
+	src: url('../dist/font/promafa.eot?14472632');
+	src: url('../dist/font/promafa.eot?14472632#iefix') format('embedded-opentype'),
+	     url('../dist/font/promafa.woff?14472632') format('woff'),
+	     url('../dist/font/promafa.ttf?14472632') format('truetype'),
+	     url('../dist/font/promafa.svg?14472632#promafa') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'promafa';
-    src: url('../font/promafa.svg?89716978#promafa') format('svg');
+    src: url('../font/promafa.svg?14472632#promafa') format('svg');
   }
 }
 */
@@ -61,3 +61,6 @@
 .icon-menu:before { content: '\e804'; } /* '' */
 .icon-align-right:before { content: '\e805'; } /* '' */
 .icon-cancel:before { content: '\e806'; } /* '' */
+.icon-globe:before { content: '\e807'; } /* '' */
+.icon-right-open:before { content: '\e808'; } /* '' */
+.icon-left-open:before { content: '\e809'; } /* '' */

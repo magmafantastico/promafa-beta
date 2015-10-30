@@ -1,3 +1,9 @@
+/* body */
+
+body {
+	overflow-x: hidden;
+}
+
 /* main header */
 
 body > header {
@@ -42,7 +48,7 @@ body > header > header .logo-wrapper {
 	justify-content: center;
 	max-height: 60px;
 	margin: .375em 1em;
-	z-index: 3;
+	/*z-index: 3;*/
 }
 
 /* main nav toggle */

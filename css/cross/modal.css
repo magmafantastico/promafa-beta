@@ -1,0 +1,7 @@
+.modal {
+	left: 100%;
+}
+
+.modal.active {
+	left: 0;
+}

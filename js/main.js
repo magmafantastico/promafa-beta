@@ -39,7 +39,7 @@ main.updateHeaderHeight = function(headerHeight) {
 
 main.goToAnchor = function() {
 
-	scroll.to(3000);
+	//scroll.to(3000);
 
 };
 
