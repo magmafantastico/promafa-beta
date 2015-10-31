@@ -121,6 +121,10 @@ reps.frames.btn.addListeners = function() {
 	for (var i = reps.frames.btn.toggle.length; i--; )
 		reps.frames.btn.toggle[i].addEventListener('click', reps.frames.btn.toggleCtrl);
 
+	window.addEventListener('resize', function() {
+		reps.frames.translate(false);
+	});
+
 };
 
 reps.frames.btn.getButtons = function () {
@@ -432,13 +436,7 @@ reps.map.styles = [
 	}
 ];
 
-reps.map.options = {
-	scrollwheel: false,
-	center: reps.map.center,
-	zoom: reps.map.zoom,
-	mapTypeId: google.maps.MapTypeId.ROADMAP,
-	styles: reps.map.styles
-};
+reps.map.options = {};
 
 reps.map.markers = {};
 
@@ -490,6 +488,14 @@ reps.map.markers.boundsChangeCtrl = function() {
 };
 
 reps.map.init = function() {
+
+	reps.map.options = {
+		scrollwheel: false,
+		center: reps.map.center,
+		zoom: reps.map.zoom,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		styles: reps.map.styles
+	};
 
 	reps.map.map = new google.maps.Map(reps.map.canvas, reps.map.options);
 	reps.map.markers.addAll(reps.map.map);

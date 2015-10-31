@@ -44,12 +44,40 @@
 	transition: transform .5s;
 }
 
+/* Reps Intro */
+
+.reps .reps-intro h1,
+.reps .reps-intro p {
+	text-align: center;
+}
+
+.reps .reps-intro p {
+	max-width: 36em;
+	padding: 1em;
+}
+
+/* Reps Content Options */
+
+.reps-content-options .option {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 4.5em;
+}
+
+.reps-content-options .option:hover {
+	background-color: #e0e0e0;
+	color: #b71c1c;
+}
+
 /* Reps Header */
 
 .reps .reps-header {
 	display: flex;
 	flex-direction: column;
-	width: 60%;
+	width: 40%;
 }
 
 /* Reps List */
@@ -170,5 +198,5 @@
 /* Reps Map */
 
 .reps .reps-map {
-	width: 40%;
+	width: 60%;
 }
